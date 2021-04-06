@@ -1,0 +1,7 @@
+#!/bin/bash
+source ~/catkin-ws/devel/setup.bash
+source /etc/ros/env.sh
+export ROS_HOME=$(echo ~spiri/.ros)
+roslaunch jetson_csi_cam video-daylight-nodelet-800x600.launch
+PID=$!
+wait "$PID"

@@ -1,0 +1,10 @@
+[Unit]
+Requires=camlaunch.service
+PartOf=camlaunch.service
+After=NetworkManager.service time-sync.target roscore.service camlaunch.service
+[Service]
+Type=simple
+User=spiri
+ExecStart=/usr/sbin/apriltaglaunch
+[Install]
+WantedBy=multi-user.target

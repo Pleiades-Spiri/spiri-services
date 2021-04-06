@@ -1,0 +1,7 @@
+#!/bin/bash
+source ~/catkin-ws/devel/setup.bash
+source /etc/ros/env.sh
+export ROS_HOME=$(echo ~spiri/.ros)
+roslaunch apriltag_ros continuous_detection_nodelet.launch __ns:=stereo &
+PID=$!
+wait "$PID"

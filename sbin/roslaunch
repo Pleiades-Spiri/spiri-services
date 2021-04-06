@@ -1,0 +1,7 @@
+#!/bin/bash
+source ~/catkin-ws/devel/setup.bash
+source /etc/ros/env.sh
+export ROS_HOME=$(echo ~spiri/.ros)
+roslaunch mavros px4_spiri_avoid.launch &
+PID=$!
+wait "$PID"
