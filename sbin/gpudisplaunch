@@ -1,0 +1,7 @@
+#!/bin/bash                               
+source ~/catkin-ws/devel/setup.bash
+source /etc/ros/env.sh
+export ROS_HOME=$(echo ~spiri/.ros)
+roslaunch gpu_stereo_image_proc libsgm_stereo_image_proc.launch manager:=/stereo/standalone_nodelet __ns:=stereo
+PID=$!
+wait "$PID"

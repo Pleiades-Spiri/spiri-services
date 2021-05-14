@@ -1,0 +1,10 @@
+[Unit]
+Requires=roscore.service
+PartOf=roscore.service
+After=NetworkManager.service time-sync.target roscore.service camlaunch.service
+[Service]
+Type=simple
+User=spiri
+ExecStart=/usr/sbin/gpudisplaunch
+[Install]
+WantedBy=multi-user.target
